@@ -20,3 +20,6 @@ IOS safari
   <meta name="apple-mobile-web-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="PWAGram">
   <link rel="apple-touch-icon" href="/src/images/icons/app-icon-144x144.png" sizes="144x144">
+  <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#fff">
+  <meta name="theme-color" content="#3f51b5">
