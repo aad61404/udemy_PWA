@@ -23,3 +23,17 @@ IOS safari
   <meta name="msapplication-TileImage" content="/src/images/icons/app-icon-144x144.png">
   <meta name="msapplication-TileColor" content="#fff">
   <meta name="theme-color" content="#3f51b5">
+
+ ##  30 Service Worker Lifecycle 推薦觀看
+
+    "start": "http-server -c-1 -p 3000"
+    添加了這個-c-1標誌，它將確保我們不會使用  正常的瀏覽器緩存。
+    現在，您將在本課程的後面部分了解到兩種類型的緩存，一個可以供服務人員使用的緩存和默認的瀏覽器緩存
+32 Registering a Service Worker
+用戶將要訪問。一旦註冊，
+除非您有新版本的Service Worker，但您將無法輕鬆或快速地更換它。
+以便可以從任何地方進行註冊，因為否則，您需要押注訪問特定網站的用戶
+
+您應用的頁面。
+
+因此，添加註冊代碼的好地方是app.js文件，因為我正在導入此文件
