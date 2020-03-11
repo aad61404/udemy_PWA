@@ -37,3 +37,6 @@ IOS safari
 您應用的頁面。
 
 因此，添加註冊代碼的好地方是app.js文件，因為我正在導入此文件
+
+第40堂 裝置符合時 彈出intstall 的視窗
+Deffering the App install Banner
