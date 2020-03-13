@@ -26,9 +26,9 @@ IOS safari
 
  ##  30 Service Worker Lifecycle 推薦觀看
 
-    "start": "http-server -c-1 -p 3000"
-    添加了這個-c-1標誌，它將確保我們不會使用  正常的瀏覽器緩存。
-    現在，您將在本課程的後面部分了解到兩種類型的緩存，一個可以供服務人員使用的緩存和默認的瀏覽器緩存
+"start": "http-server -c-1 -p 3000"
+添加了這個-c-1標誌，它將確保我們不會使用  正常的瀏覽器緩存。
+現在，您將在本課程的後面部分了解到兩種類型的緩存，一個可以供服務人員使用的緩存和默認的瀏覽器緩存
 32 Registering a Service Worker
 用戶將要訪問。一旦註冊，
 除非您有新版本的Service Worker，但您將無法輕鬆或快速地更換它。
@@ -38,5 +38,40 @@ IOS safari
 
 因此，添加註冊代碼的好地方是app.js文件，因為我正在導入此文件
 
+
 第40堂 裝置符合時 彈出intstall 的視窗
 Deffering the App install Banner
+
+
+
+# Promise and fetch
+http://httpbin.org/
+
+第51 堂 
+google tool post 
+access-control-allow-credentials: true
+access-control-allow-origin: http://localhost:3000
+
+fetch     mode cors and no-cors 差別
+
+fetch 跟 傳統 ajax 差距 （異步處理 fetch 較好）
+
+
+Service Workers -cahcing
+
+第69
+69. Implementing Dynamic Caching
+點擊其他頁面 將其存到cache 離線後可看
+
+查詢 ip 在main.js
+```
+fetch('https://httpbin.org/ip')
+  .then(function(res) {
+     console.log(res);
+     console.log(res.json());
+    return res.json();
+  })
+  .then(function(data) {
+    console.log(data.origin);
+  });
+```
