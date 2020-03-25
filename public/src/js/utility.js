@@ -23,3 +23,13 @@ var dbPromise = idb.open('posts-store', 1, function (db) {
         return store.getAll();
       });
   }
+
+  function clearAllData(st) {
+    return dbPromise
+      .then(function(db) {
+        var tx = db.transaction(st, 'readwrite');
+        var store = tx.objectStore(st);
+        store.clear();
+        return tx.complete;
+      });
+  }
