@@ -75,3 +75,7 @@ fetch('https://httpbin.org/ip')
     console.log(data.origin);
   });
 ```
+<!-- ![](https://i.ytimg.com/vi/tVIUQHbj6cg/hqdefault.jpg) -->
+
+
+![](https://i.ytimg.com/vi/tVIUQHbj6cg/hqdefault.jpg)
