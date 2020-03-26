@@ -79,3 +79,17 @@ fetch('https://httpbin.org/ip')
 
 
 ![](https://i.ytimg.com/vi/tVIUQHbj6cg/hqdefault.jpg)
+
+
+131 ~ 134  
+# fire base 
+https://console.firebase.google.com/project/pwagram-jayson/database/pwagram-jayson/rules?hl=zh-tw
+Database rule  set to 
+```
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+```
