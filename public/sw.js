@@ -182,3 +182,44 @@ self.addEventListener('fetch', function (event) {
 //     fetch(event.request)
 //   );
 // });
+
+
+self.addEventListener('sync', function(event) {
+  console.log('[Service Worker] Background syncing', event);
+  if (event.tag === 'sync-new-posts') {
+    console.log('[Service Worker] Syncing new Posts');
+    event.waitUntil(
+      readAllData('sync-posts')
+        .then(function(data) {
+          for (var dt of data) {
+            fetch('https://us-central1-pwagram-jayson.cloudfunctions.net/storePostData', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+              },
+              body: JSON.stringify({
+                id: dt.id,
+                title: dt.title,
+                location: dt.location,
+                image: 'https://firebasestorage.googleapis.com/v0/b/pwagram-jayson.appspot.com/o/sf-boat.jpg?alt=media&token=7e8f3c54-04be-4022-a18a-0a182f79d040'
+              })
+            })
+              .then(function(res) {
+                console.log('Sent data', res);
+                if (res.ok) {
+                  res.json()
+                    .then(function(resData) {
+                      deleteItemFromData('sync-posts', resData.id);
+                    });
+                }
+              })
+              .catch(function(err) {
+                console.log('Error while sending data', err);
+              });
+          }
+
+        })
+    );
+  }
+});

@@ -1,3 +1,9 @@
+# 線上網址 ：
+https://firebase.google.com/docs/hosting/
+
+過程 (第七章節 IndexedDB and Dynamic Data 跟第九章節 Background Sync)
+
+
 first web app
 01 
 http://127.0.0.1:3000/
@@ -93,3 +99,46 @@ Database rule  set to
   }
 }
 ```
+
+# firebase-tools 可以使用node terminal  操作firebase 並使用server-side code
+sudo npm install -g firebase-tools
+firebase login
+firebase init
+Functions: Configure and deploy Cloud Functions, 
+Hosting: Configure and deploy Firebase Hosting sites
+
+Configure as a single-page app (rewrite all urls to /index.html)? N
+
+done you will see firebase.json
+
+cd functions/
+npm install firebase cors --save
+
+firebase  齒輪 專案設定 服務帳戶 Firebase Admin SDK
+
+1. Generate new private key
+2. 
+```
+var admin = require("firebase-admin");
+
+var serviceAccount = require("path/to/serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://pwagram-jayson.firebaseio.com"
+});
+
+```
+firebase deploy 時遇上錯誤 
+Error: functions predeploy error: Command terminated with non-zero exit code1
+
+解法：
+https://stackoverflow.com/questions/48732513/error-functions-predoploy-error-command-terminated-with-non-zero-exit-code4294
+You can remove everything under "predeploy" in firebase.json, and it'll stop running the script which is causing issues.
+
+Function URL (storePostData): https://us-central1-pwagram-jayson.cloudfunctions.net/storePostData
+Project Console: https://console.firebase.google.com/project/pwagram-jayson/overview
+Hosting URL: https://pwagram-jayson.firebaseapp.com
+
+部署 firebase 請參考
+https://firebase.google.com/docs/hosting/
